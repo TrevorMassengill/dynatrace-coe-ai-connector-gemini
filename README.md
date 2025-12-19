@@ -1,49 +1,22 @@
-# Getting Started with your Dynatrace App
+## Prerequisits
 
-This project was bootstrapped with Dynatrace App Toolkit.
+1. Latest stable NodeJS
+2. Latest stable Typescript
+3. Permission to deploy apps in the Dynatrace Environment
 
-It uses React in combination with TypeScript, to provide great developer experience.
+## Installation 
 
-## Available Scripts
+1. Download zip
+2. Unzip
+3. Modify `app.config.json`
+- Change `environmentURL` to reflect your Dynatrace Environment
+4. Run `npx dt-app deploy` deploy from a terminal within the project folder.
+- If successful, you should see a new connector as an option when adding a new task to a Workflow.
 
-In the project directory, you can run:
+## Uninstall
 
-### `npm run start`
+1. Run `npx dt-app uninstall` from a terminal within the project folder.
 
-Runs the app in the development mode. A new browser window with your running app will be automatically opened.
+## Usage
 
-Edit a component file in `ui` and save it. The page will reload when you make changes. You may also see any errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder. It correctly bundles your app in production mode and optimizes the build for the best performance.
-
-### `npm run deploy`
-
-Builds the app and deploys it to the specified environment in `app.config.json`.
-
-### `npm run uninstall
-
-Uninstalls the app from the specified environment in `app.config.json`.
-
-### `npm run generate:function`
-
-Generates a new serverless function for your app in the `api` folder.
-
-### `npm run update`
-
-Updates @dynatrace-scoped packages to the latest version and applies automatic migrations.
-
-### `npm run info`
-
-Outputs the CLI and environment information.
-
-### `npm run help`
-
-Outputs help for the Dynatrace App Toolkit.
-
-## Learn more
-
-You can find more information on how to use all the features of the new Dynatrace Platform in [Dynatrace Developer](https://dt-url.net/developers).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+TODO
