@@ -1,4 +1,4 @@
-## Prerequisits
+## Prerequisites
 
 1. Latest stable NodeJS
 2. Latest stable Typescript
