@@ -1,6 +1,6 @@
 {
   "$schema": "./.dt-app/app.config.schema.json",
-  "environmentUrl": "https://egu21862.apps.dynatrace.com/",
+  "environmentUrl": "https://DTENVGOESHERE.apps.dynatrace.com/",
   "app": {
     "name": "Gemini Connector",
     "version": "0.9.1029",
