@@ -40,9 +40,10 @@ export default async (payload: any) => {
   }
 
   const geminiResponse: any = await callGemini(payload.prompt);
-  userLogger.info(JSON.stringify(geminiResponse.candidates[0].content.content.parts[0].text));
+  const geminiResponseText = JSON.stringify(geminiResponse.candidates[0].content.parts[0].text);
+  userLogger.info(geminiResponseText);
   return { 
-    response: geminiResponse.candidates[0].content.content.parts[0].text,
+    response: geminiResponseText,
     tokens: {
       total: geminiResponse.usageMetadata["totalTokenCount"]
     },

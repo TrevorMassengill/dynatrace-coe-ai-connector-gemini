@@ -3,7 +3,7 @@
   "environmentUrl": "https://egu21862.apps.dynatrace.com/",
   "app": {
     "name": "Gemini Connector",
-    "version": "0.9.1026",
+    "version": "0.9.1029",
     "description": "Workflow Connector, sends data and a prompt to Gemini to analyze and respond to.",
     "id": "my.coe.ai.connectors.gemini",
     "scopes": [
