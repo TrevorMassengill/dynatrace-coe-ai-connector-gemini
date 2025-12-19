@@ -2,13 +2,36 @@
   "$schema": "./.dt-app/app.config.schema.json",
   "environmentUrl": "https://egu21862.apps.dynatrace.com/",
   "app": {
-    "name": "coe-ai-connectors",
-    "version": "0.0.0",
-    "description": "A starting project with routing, fetching data, and charting",
-    "id": "my.coe.ai.connectors",
+    "name": "Gemini Connector",
+    "version": "0.9.1026",
+    "description": "Workflow Connector, sends data and a prompt to Gemini to analyze and respond to.",
+    "id": "my.coe.ai.connectors.gemini",
     "scopes": [
-      { "name": "storage:logs:read", "comment": "default template" },
-      { "name": "storage:buckets:read", "comment": "default template" }
-    ]
-  }
+      {
+        "name": "storage:logs:read",
+        "comment": "default template"
+      },
+      {
+        "name": "storage:buckets:read",
+        "comment": "default template"
+      },
+      {
+        "name": "app-settings:objects:read",
+        "comment": "To read app settings"
+      },
+      { "name": "app-settings:objects:read", "comment": "Read app settings" },
+      { "name": "app-settings:objects:write", "comment": "Read app settings" },
+      { "name": "automation:workflows:read", "comment": "Read app settings" }
+    ],
+    "actions": [
+      {
+        "name": "gemini",
+        "title": "Gemini",
+        "description": "Change description in the app.config.json"
+      }
+    ],
+    "icon": "app-icon-gemini.svg",
+    "hidden": true
+  },
+  "plugins": ["@dynatrace-sdk/dt-app-plugin-client-app-settings-v2"]
 }
