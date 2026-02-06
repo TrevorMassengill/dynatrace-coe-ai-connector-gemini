@@ -68,8 +68,29 @@ To save on token costs and improve response accuracy, use a script to extract on
 ### 5. (Optional) Store the AI Response
 You can archive Gemini's analysis back into Dynatrace as a log for long-term tracking.
 1. Add a **Run JavaScript** task.
-2. Use the Dynatrace SDK to ingest the task output as a log.
-3. To view your AI summaries later, run the following in the **Logs** app:
+2. Use the Dynatrace SDK to ingest the task output as a log, sample code below.
+    ```sql
+    import { execution, result } from "@dynatrace-sdk/automation-utils";
+    import { logsClient } from '@dynatrace-sdk/client-classic-environment-v2';
+    
+    export default async function () {
+      const taskExecutionResult = await result('gemini_1');
+    
+      console.log('print: ', taskExecutionResult.response);
+      
+      return await logsClient.storeLog({
+        body: [
+          {
+            'content': taskExecutionResult.response,
+            'log.source': 'Gemini',
+            'type': 'AI Summary',
+          }
+        ],
+        type: 'application/json; charset=utf-8'
+      });
+    }
+    ```   
+4. To view your AI summaries later, run the following in the **Logs** app:
     ```sql
     fetch logs
     | filter matchesValue(type, "AI Summary") AND matchesValue(log.source, "Gemini")
